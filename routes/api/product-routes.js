@@ -36,16 +36,9 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  /* req.body should look like this...
-    {
-      product: "Basketball",  // Change 'product_name' to 'product'
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    }
-  */
+ 
   Product.create({
-    product: req.body.product,  // Use 'product' from the request body
+    product: req.body.product,  
     price: req.body.price,
     stock: req.body.stock,
   })
