@@ -1,4 +1,5 @@
 # E-commerce Back End Starter Code
+Using MYSQL and Sequelize, write route logic that returns the desired data. 
 
 ## User Story
 >GIVEN a functional Express.js API
@@ -16,3 +17,16 @@
 
 >WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 >THEN I am able to successfully create, update, and delete data in my database
+
+## What I Learned
+ This project really helped solidify in my mind the different route concepts. I learned by means of debugging how the different relationships interact and the constraints a foreign key has on a model. The  `onDelete: "CASCADE"` was a really important bit of code to include for the delete route in my products page.
+ I feel more confident now in my ability to use MYSQL and Sequelize to write server code in Javascript. 
+
+
+## Deployed Application
+[Github Repo](https://github.com/TorySnopl/ecommerce_backend)
+
+[Video Demonstration]()
+
+## Source Code
+Source code was provided by the UofO bootcamp. Additionally some code snippets were used from the Module 13 activities. Major thanks to the AskBCS staff for their assistance.
