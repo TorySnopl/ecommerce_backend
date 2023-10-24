@@ -26,7 +26,7 @@ Using MYSQL and Sequelize, write route logic that returns the desired data.
 ## Deployed Application
 [Github Repo](https://github.com/TorySnopl/ecommerce_backend)
 
-[Video Demonstration]()
+[Video Demonstration](https://drive.google.com/file/d/1oFu1QbHP7_TmE1Ql42HC6oJafXmC3deU/view)
 
 ## Source Code
 Source code was provided by the UofO bootcamp. Additionally some code snippets were used from the Module 13 activities. Major thanks to the AskBCS staff for their assistance.
