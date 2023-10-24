@@ -35,39 +35,27 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', (req, res) => {
- 
-  Product.create({
-    product: req.body.product,  
-    price: req.body.price,
-    stock: req.body.stock,
-  })
-    .then((product) => {
-      // if there are product tags, create associations with ProductTag
-      if (req.body.tagIds.length) {
-        const productTagIdArr = req.body.tagIds.map((tag_id) => {
-          return {
-            product_id: product.id,
-            tag_id,
-          };
-        });
-        return ProductTag.bulkCreate(productTagIdArr)
-          .then((productTagIds) => {
-            // Respond with the product and associated tag IDs
-            res.status(200).json({
-              product,
-              tags: productTagIds
-            });
-          });
-      }
-      // if no product tags, respond with just the product
-      res.status(200).json(product);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
+router.post('/', async (req, res) => {
+  
+  if (!req.body.product_name || !req.body.price || !req.body.stock) {
+    return res.status(400).json({ message: 'Missing required fields: product_name, price, and stock' });
+  }
+
+  try {
+   
+    const newProduct = await Product.create({
+      product_name: req.body.product_name,
+      price: req.body.price,
+      stock: req.body.stock,
     });
+    
+    res.status(200).json(newProduct);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
+
+
 
 
 // update product
